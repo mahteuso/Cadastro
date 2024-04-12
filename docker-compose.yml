@@ -1,0 +1,15 @@
+version: "3.1"
+services:
+  db:
+    image: postgres
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - cadastro:/var/lib/mysql
+
+volumes:
+  cadastro:
