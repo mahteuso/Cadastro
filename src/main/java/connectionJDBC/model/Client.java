@@ -3,12 +3,18 @@ package connectionJDBC.model;
 import java.util.Objects;
 
 public class Client {
-    private Integer id;
+
     private String name;
     private String email;
 
-    public Client(Integer id, String name, String email) {
-        this.id = id;
+    private int id;
+
+    public Client(){
+
+    }
+
+    public Client(String name, String email) {
+
         this.name = name;
         this.email = email;
     }
@@ -29,11 +35,11 @@ public class Client {
         this.email = email;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -41,12 +47,12 @@ public class Client {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Client userData)) return false;
-        return Objects.equals(name, userData.name) && Objects.equals(email, userData.email) && Objects.equals(id, userData.id);
+        return Objects.equals(name, userData.name) && Objects.equals(email, userData.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email, id);
+        return Objects.hash(name, email);
     }
 
     @Override
@@ -54,7 +60,7 @@ public class Client {
         return "UserData{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", id=" + id +
+                ", id='" + id + '\'' +
                 '}';
     }
 }
